@@ -1,22 +1,54 @@
 # AndroidTemplate
-Template repository for Android projects
+Template repository to pre-configure Android projects with various tools.
 
-## Tools Installed
+## Tools  
+List of tools that will be installed or have configuration provided.  
+
 * Commitlint  
 * Danger  
 * Dependabot  
-
-## Tools Configred
 * Detekt  
-* KtLint  
+* GitHub Actions  
+* Jacoco  
+* ktlint  
 
 ## Get Started
-run `npm install` to install the commit linting tools.  
-If using Jacoco, add `jacoco_version` to your root `build.gradle`.  
+* [ ] Run `npm install` to install the commit linting tools.  
+* [ ] Add a GitHub secret for Danger `DANGER_API_TOKEN`.  
+* [ ] Add a `jacoco_version` variable to your root `build.gradle` to provide the jacoco version.  
+* [ ] Add Detekt to the project `build.gradle`, using the config provided.  
+* [ ] Add ktlint to the project, config will be pulled in automatically.  
+* [ ] Check file paths in the Dangerfile to ensure it gets the reports in the correct locations.
+* [ ] Update README.
 
-## Configure
-To configure Danger, go into the `DangerFile` and update any relevant settings.  
-To configure Dependabot, go to `.github/dependabot.yml` and update any relevant settings.
+# Once repository is configured, delete this section.  
+ ======================================================
 
-## To Add
-[Danger JUnit](https://github.com/orta/danger-junit)  
+# Project Name
+> Description of the project
+  
+Badges
+
+<!-- If Application
+> Google Play Link
+> Screenshots
+
+## Features
+
+## Tech Stack
+--> 
+
+<!-- If Library
+## Installation
+
+## Usage example
+
+## Configuration
+
+-->
+
+## Contributing
+Please read [CONTRIBUTING.md](CONTRIBUTING.md_URL_HERE) for details on how to contribute.
+
+## License
+Apache 2.0 - See [LICENSE](LICENSE_URL_HERE) for more information.
