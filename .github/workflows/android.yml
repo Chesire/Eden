@@ -32,3 +32,10 @@ jobs:
 
     - name: run assemble
       run: ./gradlew assembleDebug
+    
+    - name: Danger action
+      uses: MeilCli/danger-action@v4
+      with:
+        danger_file: Dangerfile
+        danger_id: ${{ secrets.DANGER_API_TOKEN }}
+      
