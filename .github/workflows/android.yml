@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  assemble:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -13,20 +13,58 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: run ktlint
+    - name: run assembleDebug
+      run: ./gradlew assembleDebug
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: run testDebugUnitTest
+      run: ./gradlew testDebugUnitTest
+
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: run ktlintCheck
       run: ./gradlew ktlintCheck
-    - name: run lint
+    - name: run lintDebug
       run: ./gradlew lintDebug
+    - name: upload lint results
+      uses: actions/upload-artifact@v2
+      with:
+        name: lint
+        path: app/build/reports/
     - name: run detekt
       run: ./gradlew detekt
-    - name: run tests
-      run: ./gradlew testDebugUnitTest
-    - name: run assemble
-      run: ./gradlew assembleDebug
+    - name: upload detekt results
+      uses: actions/upload-artifact@v2
+      with:
+        name: detekt
+        path: build/reports/
+
+  danger:
+    needs: analyze
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
-    - name: install bundler
+    - name: install bundler 2.1.2
       run: gem install bundler:2.1.2
     - uses: actions/cache@v1
       with:
@@ -34,6 +72,16 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile') }}
         restore-keys: |
           ${{ runner.os }}-gems-
+    - name: download lint results
+      uses: actions/download-artifact@v2
+      with:
+        name: lint
+        path: app/build/reports/
+    - name: download detekt results
+      uses: actions/download-artifact@v2
+      with:
+        name: detekt
+        path: build/reports/
     - uses: MeilCli/danger-action@v4
       if: github.event_name == 'pull_request'
       with:
@@ -43,3 +91,4 @@ jobs:
         danger_id: 'danger-ci'
       env:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_API_TOKEN }}
+ 
