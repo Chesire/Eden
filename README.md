@@ -14,15 +14,15 @@ List of tools that will be installed or have configuration provided.
 
 ## Get Started
 * [ ] Run `npm install` to install the commit linting tools.  
-* [ ] Add a GitHub secret for Danger `DANGER_API_TOKEN`.  
+* [ ] Add a GitHub secret for the Danger API key as `DANGER_API_TOKEN`.  
 * [ ] Add a `jacoco_version` variable to your root `build.gradle` to provide the jacoco version.  
 * [ ] Add ktlint to the project, follow example gradle file.  
 * [ ] Add Detekt to the project, follow example gradle file.  
 * [ ] Check file paths in the Dangerfile to ensure it checks the correct locations for reports.
 * [ ] Update README.
 
-# Once repository is now configured, delete this section.  
- ===================================================================================
+# Once repository is configured, delete this section.  
+ ============================================================================
 
 # Project Name
 > Description of the project
