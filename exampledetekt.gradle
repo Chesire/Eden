@@ -1,0 +1,18 @@
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.10.0"
+}
+
+detekt {
+    config = files("detekt.yml")
+    input = files("app/src/main/java") // Add more locations to test here
+    reports {
+        xml {
+            enabled = true
+            destination = file("build/reports/detekt/detekt.xml")
+        }
+        html {
+            enabled = true
+            destination = file("build/reports/detekt/detekt.html")
+        }
+    }
+}
