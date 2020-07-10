@@ -15,11 +15,15 @@ List of tools that will be installed or have configuration provided.
 ## Get Started
 * [ ] Run `npm install` to install the commit linting tools.  
 * [ ] Add a GitHub secret for the Danger API key as `DANGER_API_TOKEN`.  
+* [ ] Create an Android project.
 * [ ] Add Jacoco to the project, follow example gradle file.  
 * [ ] Add ktlint to the project, follow example gradle file.  
 * [ ] Add Detekt to the project, follow example gradle file.  
 * [ ] Check file paths in the Dangerfile to ensure it checks the correct locations for reports.
 * [ ] Update README.
+
+## Configure
+* To ensure failed tests do not fail a build before we can report on results, add `testOptions { unitTests.all { setIgnoreFailures(true) } }` to the modules `build.gradle`.
 
 # Once repository is configured, delete this section.  
  ============================================================================
