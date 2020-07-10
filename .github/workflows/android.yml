@@ -29,6 +29,16 @@ jobs:
     - name: run jacocoTestReport
       run: ./gradlew jacocoTestReport
     - uses: codecov/codecov-action@v1
+    - name: upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: tests
+        path: app/build/reports/
+    - name: upload test xml
+      uses: actions/upload-artifact@v2
+      with:
+        name: test_xml
+        path: app/build/test-results/
 
   analyze:
     runs-on: ubuntu-latest
@@ -85,6 +95,11 @@ jobs:
       with:
         name: detekt
         path: build/reports/
+    - name: download test results
+      uses: actions/download-artifact@v2
+      with:
+        name: test_xml
+        path: app/build/test-results/
     - uses: MeilCli/danger-action@v4
       if: github.event_name == 'pull_request'
       with:
