@@ -30,3 +30,4 @@ Dir[junit_tests_dir].each do |file_name|
   junit.parse file_name
   junit.show_skipped_tests = true
 end
+junit.report
