@@ -1,0 +1,10 @@
+buildscript {
+    ext.jacoco_version = '0.8.5'
+    dependencies {
+        classpath "org.jacoco:org.jacoco.core:$jacoco_version"
+    }
+}
+
+subprojects {
+    apply from: "../jacoco.gradle"
+}
