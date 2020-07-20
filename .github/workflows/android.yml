@@ -28,7 +28,7 @@ jobs:
       run: ./gradlew testDebugUnitTest
     - name: run jacocoTestReport
       run: ./gradlew jacocoTestReport
-    - uses: codecov/codecov-action@v1.0.10
+    - uses: codecov/codecov-action@v1.0.11
     - name: upload test results
       uses: actions/upload-artifact@v2
       with:
