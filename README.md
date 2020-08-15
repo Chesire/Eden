@@ -20,6 +20,7 @@ List of tools that will be installed or have configuration provided.
 * [ ] Add ktlint to the project, follow example gradle file.  
 * [ ] Add Detekt to the project, follow example gradle file.  
 * [ ] Check file paths in the Dangerfile to ensure it checks the correct locations for reports.
+* [ ] Update CONTRIBUTING.md.
 * [ ] Update README.
 
 ## Configure
@@ -52,7 +53,7 @@ Badges
 -->
 
 ## Contributing
-Please read [CONTRIBUTING.md](CONTRIBUTING.md_URL_HERE) for details on how to contribute.
+Please read [CONTRIBUTING.md](CONTRIBUTING_URL_HERE) for details on how to contribute.
 
 ## License
 Apache 2.0 - See [LICENSE](LICENSE_URL_HERE) for more information.
