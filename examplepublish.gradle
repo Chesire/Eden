@@ -1,0 +1,30 @@
+// Add below to project module
+dependencies {
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+}
+
+// Add below to library module and update accordingly
+ext {
+    bintrayRepo = 'ADD BINTRAY REPO'
+    bintrayName = 'ADD BINTRAY NAME'
+
+    libraryName = 'ADD LIBRARY NAME'
+
+    publishedGroupId = 'ADD PUBLISHED GROUP ID'
+    artifact = 'ADD ARTIFACT'
+    libraryVersion = '0.0.0'
+
+    libraryDescription = 'ADD DESCRIPTION OF LIBRARY'
+    siteUrl = 'ADD WEBSITE URL'
+    gitUrl = 'https://github.com/GITHUB USER NAME/GITHUB PROJECT NAME.git'
+    developerId = 'ADD DEVELOPER ID/NAME'
+    developerName = 'ADD DEVELOPER NAME'
+    developerEmail = 'ADD DEVELOPER EMAIL'
+    ghRepo = 'GITHUB USER NAME/GITHUB PROJECT NAME'
+    ghReleaseNotesFile = 'README.md'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'publish.gradle'
