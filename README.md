@@ -7,15 +7,15 @@ List of tools that will be installed or have configuration provided.
 * Commitlint  
 * Danger  
 * Dependabot  
-* Detekt  
-* GitHub Actions  
 * Jacoco  
 * ktlint  
+* Detekt  
+* GitHub Actions  
+* Bintray publishing  
 
 ## Get Started
 * [ ] Run `npm install` to install the commit linting tools.  
 * [ ] Add a GitHub secret for the Danger API key as `DANGER_API_TOKEN`.  
-* [ ] If a library, add GitHub secrets for `BINTRAY_USER_ID` & `BINTRAY_API_KEY`.  
 * [ ] Create an Android project.  
 * [ ] Add Jacoco to the project, follow example gradle file.  
 * [ ] Add ktlint to the project, follow example gradle file.  
@@ -24,9 +24,12 @@ List of tools that will be installed or have configuration provided.
 * [ ] Update CONTRIBUTING.md.
 * [ ] Update README.
 
+### Library
+* [ ] Add GitHub secrets for `BINTRAY_USER_ID` & `BINTRAY_API_KEY`.  
+* [ ] Add Bintray publishing to the project, follow example gradle file.  
+
 ## Configure
 * To ensure failed tests do not fail a build before we can report on results, add `testOptions { unitTests.all { setIgnoreFailures(true) } }` to the modules `build.gradle`.  
-* To get the correct gradle task to deploy to bintray the dependency `com.novoda:bintray-release` should be added.  
 
 # Once repository is configured, delete this section.  
  ============================================================================
