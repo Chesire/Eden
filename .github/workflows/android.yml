@@ -3,7 +3,7 @@ name: Android CI
 on:
   push:
     branches: [ master ]
-  pull_request:
+  pull_request_target:
     branches: [ master ]
   release:
     types: [ published ]
@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+        fetch-depth: 0
     - name: set up JDK 1.8
       uses: actions/setup-java@v1.4.3
       with:
@@ -24,6 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+        fetch-depth: 0
     - name: set up JDK 1.8
       uses: actions/setup-java@v1.4.3
       with:
@@ -48,6 +56,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+        fetch-depth: 0
     - name: set up JDK 1.8
       uses: actions/setup-java@v1.4.3
       with:
@@ -71,12 +83,14 @@ jobs:
 
   danger:
     needs: [ test, analyze ]
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 100
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+        fetch-depth: 0
     - name: set up JDK 1.8
       uses: actions/setup-java@v1.4.3
       with:
@@ -123,6 +137,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+        fetch-depth: 0
     - name: set up JDK 1.8
       uses: actions/setup-java@v1.4.3
       with:
