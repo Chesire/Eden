@@ -122,7 +122,6 @@ jobs:
         name: test_xml
         path: app/build/test-results/
     - uses: MeilCli/danger-action@v5.0.0
-      if: github.event_name == 'pull_request'
       with:
         plugins_file: 'Gemfile'
         install_path: 'vendor/bundle'
