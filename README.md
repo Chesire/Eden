@@ -1,7 +1,7 @@
 # AndroidTemplate
 Template repository to pre-configure Android projects with various tools.
 
-## Tools  
+## Tools
 List of tools that will be installed or have configuration provided.  
 
 * Commitlint  
