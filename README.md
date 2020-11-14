@@ -20,12 +20,13 @@ List of tools that will be installed or have configuration provided.
 * [ ] Run `npm install` to install the commit linting tools.  
 * [ ] Add a GitHub secret for the Danger API key as `DANGER_API_TOKEN`.  
 * [ ] Create an Android project.  
-* [ ] Add Jacoco to the project, follow example gradle file.  
-* [ ] Add ktlint to the project, follow example gradle file.  
-* [ ] Add Detekt to the project, follow example gradle file.  
 * [ ] Check file paths in the Dangerfile to ensure it checks the correct locations for reports.
 * [ ] Update CONTRIBUTING.md.
 * [ ] Update README.
+
+### App
+
+* [ ] Remove `com.jfrog.bintray.gradle:gradle-bintray-plugin` from build.gradle.
 
 ### Library
 
