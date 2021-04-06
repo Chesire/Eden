@@ -21,11 +21,3 @@ android_lint.lint(inline_mode: true)
 # CheckstyleFormat
 checkstyle_format.base_path = Dir.pwd
 checkstyle_format.report 'build/reports/detekt/detekt.xml' 	
-
-# JUnit
-junit_tests_dir = "**/test-results/**/*.xml"
-Dir[junit_tests_dir].each do |file_name|
-  junit.parse file_name
-  junit.show_skipped_tests = true
-  junit.report
-end
