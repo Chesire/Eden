@@ -27,6 +27,7 @@ List of tools that will be installed or have configuration provided.
 ### App
 
 * [ ] Remove `com.jfrog.bintray.gradle:gradle-bintray-plugin` from build.gradle.
+* [ ] Remove the examplepublish.gradle file.
 
 ### Library
 
