@@ -34,7 +34,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-task detektAll(type: io.gitlab.arturbosch.detekt.Detekt) {
+task detektCheck(type: io.gitlab.arturbosch.detekt.Detekt) {
     parallel = true
     source = files(projectDir)
     include "**/*.kt"

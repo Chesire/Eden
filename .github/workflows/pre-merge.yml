@@ -54,8 +54,8 @@ jobs:
         java-version: 8
     - name: run lintDebug
       run: ./gradlew lintDebug
-    - name: run detektAll
-      run: ./gradlew detektAll
+    - name: run detektCheck
+      run: ./gradlew detektCheck
     - name: upload lint results
       uses: actions/upload-artifact@v2
       with:
