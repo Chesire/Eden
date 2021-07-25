@@ -4,36 +4,38 @@ Template repository to pre-configure Android projects with various tools.
 
 ## Tools
 
-List of tools that will be installed or have configuration provided.  
+List of tools that will be installed or have configuration provided.
 
-* Commitlint  
-* Danger  
-* Dependabot  
-* Jacoco  
-* ktlint  
-* Detekt  
-* GitHub Actions  
+- Commitlint
+- Danger
+- Dependabot
+- Jacoco
+- ktlint
+- Detekt
+- GitHub Actions
 
 ## Get Started
 
-* [ ] Run `npm install` to install the commit linting tools.  
-* [ ] Add a GitHub secret for the Danger API key as `DANGER_API_TOKEN`.  
-* [ ] Create an Android project.  
-* [ ] Check file paths in the Dangerfile to ensure it checks the correct locations for reports.
-* [ ] Update CONTRIBUTING.md.
-* [ ] Update README.
+- [ ] Run `npm install` to install the commit linting tools.
+- [ ] Add a GitHub secret for the Danger API key as `DANGER_API_TOKEN`.
+- [ ] Create an Android project.
+- [ ] Check file paths in the Dangerfile to ensure it checks the correct locations for reports.
+- [ ] Update CONTRIBUTING.md.
+- [ ] Update README.
 
 ## Configure
 
-* To ensure failed tests do not fail a build before we can report on results, add `testOptions { unitTests.all { setIgnoreFailures(true) } }` to the modules `build.gradle`.  
+- To ensure Husky is setup correctly, it may be required to run `npx husky-init` from the root of the repository after running `npm install`. Once this is done the contents of the hooks in the `.husky` directory will need to be checked to ensure the same file permissions as the newly created `pre-commit`.
+- To ensure failed tests do not fail a build before we can report on results, add `testOptions { unitTests.all { setIgnoreFailures(true) } }` to the modules `build.gradle`.
 
 # Once repository is configured, delete this section.
- ============================================================================
+
+============================================================================
 
 # Project Name
 
 > Description of the project
-  
+
 Badges
 
 <!-- If Application
