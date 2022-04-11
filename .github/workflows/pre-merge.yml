@@ -79,7 +79,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
     - name: download lint results
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: lint
         path: build/reports/
